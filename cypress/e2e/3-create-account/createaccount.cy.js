@@ -20,11 +20,11 @@ describe('Create an Account', () => {
 
   it('create account already exist', () => {
     cy.contains('Create an Account').click()
-    cy.get('#firstname').type('Bimasakti')
-    cy.get('[name="lastname"]').type('Hendra')
-    cy.get('#email_address').type('bimasak@gmail.com')
-    cy.get('#password').type('Bimasak@12345')
-    cy.get('#password-confirmation').type('Bimasak@12345')
+    cy.get('#firstname').type('Angga Septya')
+    cy.get('[name="lastname"]').type('Putra')
+    cy.get('#email_address').type('angga@gmail.com')
+    cy.get('#password').type('Angga@12345')
+    cy.get('#password-confirmation').type('Angga@12345')
     cy.get('.action.submit.primary').click()
     cy.contains('There is already an account with this email address.').should('be.visible')
     

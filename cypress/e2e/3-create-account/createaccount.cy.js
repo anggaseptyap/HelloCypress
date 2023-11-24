@@ -15,7 +15,7 @@ describe('Create an Account', () => {
   let firstName = randomName()
 
   beforeEach(() => {
-    cy.visit('https://magento.softwaretestingboard.com/')
+    cy.visit('')
   })
 
   it('create account already exist', () => {
@@ -30,7 +30,6 @@ describe('Create an Account', () => {
     
   })
   it('create new account success', () => {
-    //cy.visit('https://magento.softwaretestingboard.com/')
     cy.contains('Create an Account').click()
     cy.get('#firstname').type(firstName)
     cy.get('[name="lastname"]').type('Exist1')

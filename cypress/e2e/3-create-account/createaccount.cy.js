@@ -1,4 +1,13 @@
 describe('Create an Account', () => {
+
+  function randomMail(){
+    const randomString = Math.random().toString(36).substring(2,10)
+    const mail = randomString + "@gmail.com"
+    return mail
+  }
+
+  let gmail = randomMail()
+
   it('create account already exist', () => {
     cy.visit('https://magento.softwaretestingboard.com/')
     cy.contains('Create an Account').click()
@@ -16,7 +25,7 @@ describe('Create an Account', () => {
     cy.contains('Create an Account').click()
     cy.get('#firstname').type('User1')
     cy.get('#lastname').type('Exist1')
-    cy.get('#email_address').type('userexist3@gmail.com')
+    cy.get('#email_address').type(randomMail())
     cy.get('#password').type('User2@12345')
     cy.get('#password-confirmation').type('User2@12345')
     cy.get('.action.submit.primary').click()

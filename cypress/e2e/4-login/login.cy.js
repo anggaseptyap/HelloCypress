@@ -14,7 +14,7 @@ describe('login', () => {
     cy.login(loginData.valid.username,loginData.valid.password)
     cy.contains('Welcome, ').should('be.visible')
   })
-  it.only('login Invalid', () => {
+  it('login Invalid', () => {
     cy.visit('')
     cy.contains('Sign In').click()
     cy.contains('Customer Login').should('be.visible')

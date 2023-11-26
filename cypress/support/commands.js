@@ -21,8 +21,8 @@
     })
 
     Cypress.Commands.add('login',(email,password) => {
-         cy.get('#email').type(email)
-         cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .password > .control > #pass').type(password)
+         cy.get('#email').clear().type(email)
+         cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .password > .control > #pass').clear().type(password)
          cy.get('#send2').click()
     })
 // -- This is a child command --

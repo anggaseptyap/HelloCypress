@@ -10,7 +10,7 @@ describe('Create an Account', () => {
     const name = "User"+randomString
     return name
   }
-
+  const accountData = require ('../../fixtures/accountData.json')
   let gmail = randomMail()
   let firstName = randomName()
 
@@ -20,11 +20,7 @@ describe('Create an Account', () => {
 
   it('create account already exist', () => {
     cy.contains('Create an Account').click()
-    cy.get('#firstname').type('Angga Septya')
-    cy.get('[name="lastname"]').type('Putra')
-    cy.get('#email_address').type('angga@gmail.com')
-    cy.get('#password').type('Angga@12345')
-    cy.get('#password-confirmation').type('Angga@12345')
+    cy.createaccount(accountData.fName,accountData.lName,accountData.mail,accountData.pass,accountData.confirmPass)
     cy.get('.action.submit.primary').click()
     cy.contains('There is already an account with this email address.').should('be.visible')
     

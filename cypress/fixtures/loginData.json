@@ -1,0 +1,22 @@
+{
+    "valid": {
+        "username":"angga@gmail.com",
+        "password":"Angga@12345"
+
+},
+
+    "invalid": [
+        {
+            "username":"angga@gmail.com",
+            "password":"password_salah"
+        },
+        {
+            "username":"username_salah",
+            "password":"Angga@12345"
+        },
+        {
+            "username":"username_salah",
+            "password":"password_salah"
+        }
+] 
+}

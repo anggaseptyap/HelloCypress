@@ -1,0 +1,17 @@
+name: Create Account and Login test
+on: push
+jobs:
+  cypress-run:
+    name: Cypress run
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        with:
+          spec: 
+            cypress/e2e/3-create-account/createaccount.cy.js
+            cypress/e2e/4-login/login.cy.js
+          browser: chrome

@@ -1,5 +1,7 @@
-describe('Create an Account', () => {
+import loginpage from '../../support/pageObject/loginpage'
 
+describe('Create an Account', () => {
+  
   function randomMail(){
     const randomString = Math.random().toString(36).substring(2,10)
     const mail = randomString + "@gmail.com"
@@ -27,11 +29,16 @@ describe('Create an Account', () => {
   })
   it('create new account success', () => {
     cy.contains('Create an Account').click()
-    cy.get('#firstname').type(firstName)
-    cy.get('[name="lastname"]').type('Exist1')
-    cy.get('#email_address').type(gmail)
-    cy.get('#password').type('User2@12345')
-    cy.get('#password-confirmation').type('User2@12345')
+    loginpage.inputfirstName(firstName)
+    //cy.get('#firstname').type(firstName)
+    loginpage.inputlastName('ExistName')
+    //cy.get('[name="lastname"]').type('Exist1')
+    loginpage.inputEmail(gmail)
+    //cy.get('#email_address').type(gmail)
+    loginpage.inputPassword('PassExist123')
+    //cy.get('#password').type('User2@12345')
+    loginpage.inputconfirmPassword('PassExist123')
+    //cy.get('#password-confirmation').type('User2@12345')
     cy.get('.action.submit.primary').click()
     cy.url().should('include','https://magento.softwaretestingboard.com/customer/account/')
     cy.contains('Thank you for registering with Main Website Store.').should('be.visible')

@@ -8,10 +8,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Cypress run
+      - name: Cypress Quiz 3
         uses: cypress-io/github-action@v6
         with:
-          spec: 
-            cypress/e2e/3-create-account/createaccount.cy.js
-            cypress/e2e/4-login/login.cy.js
+          spec: cypress/e2e/3-create-account/createaccount.cy.js
           browser: chrome

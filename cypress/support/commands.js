@@ -40,7 +40,6 @@ Cypress.Commands.add(
     company,
     streetAddress,
     city,
-    state,
     postalCode,
     phoneNumber
   ) => {

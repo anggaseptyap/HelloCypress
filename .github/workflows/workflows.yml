@@ -1,4 +1,4 @@
-name: Create Account and Login test
+name: Quiz 3 Kelompok 12
 on: push
 jobs:
   cypress-run:
@@ -12,4 +12,10 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           spec: cypress/e2e/3-create-account/createaccount.cy.js
+          browser: chrome
+
+      - name: Checkout Test
+        uses: cypress-io/github-action@v6
+        with:
+          spec: cypress/e2e/6-checkout/checkout.cy.js
           browser: chrome

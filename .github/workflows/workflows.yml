@@ -8,14 +8,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Cypress Quiz 3
-        uses: cypress-io/github-action@v6
-        with:
-          spec: cypress/e2e/3-create-account/createaccount.cy.js
-          browser: chrome
-
       - name: Checkout Test
         uses: cypress-io/github-action@v6
         with:
           spec: cypress/e2e/6-checkout/checkout.cy.js
+          browser: chrome
+
+      - name: Cypress Quiz 3
+        uses: cypress-io/github-action@v6
+        with:
+          spec: cypress/e2e/3-create-account/createaccount.cy.js
           browser: chrome

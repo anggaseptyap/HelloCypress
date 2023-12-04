@@ -1,4 +1,4 @@
-import loginpage from '../../support/pageObject/loginpage'
+import loginPage from "../../support/pageObject/loginPage";
 
 describe('Create an Account', () => {
   
@@ -29,15 +29,15 @@ describe('Create an Account', () => {
   })
   it('create new account success', () => {
     cy.contains('Create an Account').click()
-    loginpage.inputfirstName(firstName)
+    loginPage.inputfirstName(firstName)
     //cy.get('#firstname').type(firstName)
-    loginpage.inputlastName('ExistName')
+    loginPage.inputlastName('ExistName')
     //cy.get('[name="lastname"]').type('Exist1')
-    loginpage.inputEmail(gmail)
+    loginPage.inputEmail(gmail)
     //cy.get('#email_address').type(gmail)
-    loginpage.inputPassword('PassExist123')
+    loginPage.inputPassword('PassExist123')
     //cy.get('#password').type('User2@12345')
-    loginpage.inputconfirmPassword('PassExist123')
+    loginPage.inputconfirmPassword('PassExist123')
     //cy.get('#password-confirmation').type('User2@12345')
     cy.get('.action.submit.primary').click()
     cy.url().should('include','https://magento.softwaretestingboard.com/customer/account/')

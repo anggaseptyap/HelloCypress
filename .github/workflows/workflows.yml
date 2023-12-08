@@ -1,4 +1,4 @@
-name: Quiz 3 Kelompok 12
+name: Hello Cypress
 on: push
 jobs:
   cypress-run:
